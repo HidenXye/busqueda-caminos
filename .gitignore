@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.venv/
+venv/
+.env
+.streamlit/
+.DS_Store
+benchmark_results.csv
+results.csv
