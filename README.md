@@ -214,5 +214,3 @@ heapq (insert)         50000    0        5      9.412        29.406         29.3
 
 Archivo generado: `benchmark_results.csv`.
 
-## Nota sobre clustering
-Existe [src/clustering.py](src/clustering.py) (clustering por conectividad Manhattan), pero actualmente **no se usa en la interfaz**.
