@@ -214,3 +214,13 @@ heapq (insert)         50000    0        5      9.412        29.406         29.3
 
 Archivo generado: `benchmark_results.csv`.
 
+## Conclusiones (para sustentación)
+
+- Modelar el mapa como **grafo de calles** (aristas) hace natural bloquear “calles” y no “celdas”.
+- Con **tiempos por calle** (pesos), la mejor ruta no siempre es la más corta: una ruta más larga puede ser más rápida si atraviesa calles con menor tiempo.
+- **A\*** encuentra una ruta óptima para el criterio elegido (distancia o ETA) usando una heurística Manhattan adecuada para movimiento 4‑direcciones.
+- **Yen top‑K** permite comparar alternativas reales (K rutas) sin ciclos, reutilizando A* como subrutina.
+- El **VP‑Tree** acelera consultas de proximidad frente a una búsqueda lineal cuando hay muchas consultas: en la ejecución de ejemplo, el tiempo de consultas se mantiene bajo al crecer `n`, mientras el baseline lineal crece casi proporcional a `n`.
+- Trade‑off importante: el VP‑Tree **cuesta más construirlo**, pero se justifica si vas a hacer muchas consultas de “más cercano” (riesgo/proximidad).
+- El **AVL** funciona como cola de prioridad para ordenar candidatos (correcto y demostrable), aunque `heapq` es más rápido en Python por ser implementación optimizada en C.
+
